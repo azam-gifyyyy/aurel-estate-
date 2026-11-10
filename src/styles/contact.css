@@ -1,0 +1,221 @@
+/* --------------------------------------------------------------------------
+   Contact
+   -------------------------------------------------------------------------- */
+
+.contact {
+  position: relative;
+  padding-block: clamp(96px, 11vw, 164px) clamp(64px, 8vw, 100px);
+  background: var(--ink);
+  color: var(--ivory);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  align-items: start;
+  gap: clamp(52px, 8vw, 128px);
+}
+
+.contact__heading {
+  max-width: 11ch;
+  font-size: clamp(3.1rem, 5.6vw, 5.25rem);
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 0.96;
+  color: var(--ivory);
+}
+
+.contact__heading em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--champagne);
+}
+
+.contact__copy {
+  max-width: 43ch;
+  margin-top: clamp(24px, 3vw, 34px);
+  color: var(--muted-light);
+  font-size: clamp(0.88rem, 1vw, 0.95rem);
+  line-height: 1.8;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px 34px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.contact__email {
+  position: relative;
+  padding-bottom: 5px;
+  color: var(--ivory);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+}
+
+.contact__email::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(243, 240, 233, 0.45);
+  content: '';
+  transition: background-color 0.4s var(--ease);
+}
+
+.contact__email:hover::after {
+  background: var(--champagne);
+}
+
+.contact__panel {
+  padding: clamp(25px, 3vw, 38px);
+  border: 1px solid var(--line-light);
+}
+
+.contact__panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line-light);
+  color: var(--champagne);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.contact__panel-head span:last-child {
+  color: var(--muted-light);
+}
+
+.contact__details {
+  display: grid;
+}
+
+.contact__detail {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 14px;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(243, 240, 233, 0.1);
+}
+
+.contact__detail dt {
+  color: var(--muted-light);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.contact__detail dd {
+  color: rgba(243, 240, 233, 0.88);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+
+.contact__detail a {
+  position: relative;
+  transition: color 0.3s var(--ease);
+}
+
+.contact__detail a:hover {
+  color: var(--champagne);
+}
+
+.contact__notice {
+  padding-top: 19px;
+  color: var(--muted-light);
+  font-size: 9.5px;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+
+.contact__base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 40px;
+  padding-top: 22px;
+  margin-top: clamp(64px, 8vw, 104px);
+  border-top: 1px solid var(--line-light);
+  color: var(--muted-light);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.78fr);
+    gap: 52px;
+  }
+
+  .contact__heading {
+    font-size: clamp(3rem, 6vw, 4.4rem);
+  }
+}
+
+@media (max-width: 860px) {
+  .contact__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .contact__heading {
+    font-size: clamp(3rem, 9vw, 4.8rem);
+  }
+
+  .contact__copy {
+    max-width: 520px;
+  }
+
+  .contact__panel {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .contact__base {
+    margin-top: 64px;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact__heading {
+    font-size: clamp(2.7rem, 11.5vw, 3.7rem);
+  }
+
+  .contact__actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact__panel {
+    padding: 22px 20px;
+  }
+
+  .contact__detail {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .contact__base {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
